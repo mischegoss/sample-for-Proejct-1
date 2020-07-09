@@ -33,7 +33,7 @@ $.getJSON('https://ipapi.co/json/', function(data){
 
 function getForecast() {
 
-fetch("http://api.openweathermap.org/data/2.5/weather?q=" + currentLocation + "&appid=d91f911bcf2c0f925fb6535547a5ddc9&units=imperial")
+fetch("https://api.openweathermap.org/data/2.5/weather?q=" + currentLocation + "&appid=d91f911bcf2c0f925fb6535547a5ddc9&units=imperial")
   .then(function(response) {
     return response.json();
   })
