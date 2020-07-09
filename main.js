@@ -6,9 +6,13 @@ console.log("This is working");
 var domElements = ["name", "location", "forecast", "quote", "news", "picture"];
 
 for (i = 0; i < domElements.length; i++) {
-    domElements[i] = document.getElementById(domElements[i] + "-input")
-    console.log( domElements[i])
+    this[domElements[i] + "Element"] = document.getElementById(domElements[i] + "-input")
+    console.log(this[domElements[i] + "Element"]  )
 }
 
+// Getting location API using JQuery .getJSON()
 
-
+$.getJSON('https://ipapi.co/json/', function(data){
+  console.log(locationElement)
+  locationElement.textContent = data.city;
+})
