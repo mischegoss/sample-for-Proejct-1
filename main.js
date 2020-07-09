@@ -2,6 +2,7 @@
 let currentLocation;
 let currentCondition;
 let currentActivity;
+let userInput;
 
 // Test to make sure JS file is working
 
@@ -74,3 +75,15 @@ function getTopNews() {
   
     })
   }
+
+  $(document).ready(function(){
+    $("#myModal").modal("show");
+  });
+
+ 
+$( "#modalButton" ).click(function() {
+ userInput = $("#userInput").val();
+ nameElement.textContent = userInput;
+
+});
+ 
