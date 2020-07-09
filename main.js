@@ -10,7 +10,7 @@ console.log("This is working");
 getTopNews()
 
 //Grabbing DOM elements
-var domElements = ["name", "location", "forecast", "activity", "news", "picture"];
+var domElements = ["name", "location", "forecast", "activity", "news", "picture", "total", "death", "increase", "updated", "region"];
 
 for (i = 0; i < domElements.length; i++) {
     this[domElements[i] + "Element"] = document.getElementById(domElements[i] + "-input")
@@ -21,7 +21,10 @@ for (i = 0; i < domElements.length; i++) {
 
 $.getJSON('https://ipapi.co/json/', function(data){
   currentLocation = data.city
+  currentRegion = data.region_code
   locationElement.textContent = currentLocation;
+  regionElement.textContent = currentRegion;
+  getCOVID(currentRegion)
   getForecast(currentLocation)
   
 })
@@ -87,3 +90,18 @@ $("#modalButton" ).click(function() {
 
 });
  
+function getCOVID() {
+  let regionForURL = currentRegion.toLowerCase()
+  let getCOVIDURL = "https://covidtracking.com/api/v1/states/" + regionForURL +"/current.json"
+  
+  $.getJSON(getCOVIDURL, function(data){
+    deathElement.textContent = data.death
+    totalElement.textContent = data.positive
+    increaseElement.textContent = data.positiveIncrease
+    updatedElement.textContent = data.date
+
+  
+  console.log(data)
+  
+})
+}
