@@ -16,7 +16,7 @@ for (i = 0; i < domElements.length; i++) {
     this[domElements[i] + "Element"] = document.getElementById(domElements[i] + "-input")
     console.log(this[domElements[i] + "Element"]  )
 }
-
+//Comment for testing
 // Getting location API using JQuery .getJSON()
 
 $.getJSON('https://ipapi.co/json/', function(data){
@@ -28,7 +28,7 @@ $.getJSON('https://ipapi.co/json/', function(data){
   getForecast(currentLocation)
   
 })
-
+//Comment for testing
 //getting Forecast using Weather API and changing the image to reflect the current conditions
 
 function getForecast() {
