@@ -6,6 +6,7 @@ let currentActivity;
 // Test to make sure JS file is working
 
 console.log("This is working");
+getTopNews()
 
 //Grabbing DOM elements
 var domElements = ["name", "location", "forecast", "activity", "news", "picture"];
@@ -21,6 +22,7 @@ $.getJSON('https://ipapi.co/json/', function(data){
   currentLocation = data.city
   locationElement.textContent = currentLocation;
   getForecast(currentLocation)
+  
 })
 
 //getting Forecast using Weather API and changing the image to reflect the current conditions
@@ -48,3 +50,27 @@ $.getJSON("https://www.boredapi.com/api/activity", function(data){
   activityElement.textContent = currentActivity;
   
 })
+
+
+//Get Top News in US
+
+function getTopNews() {
+  const newsURL = 
+  "https://newsapi.org/v2/top-headlines?country=us&apiKey=2db8e4a853ea4d34a0f9405a0ff55811"
+
+  fetch(newsURL)
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(data) {
+      for (i = 0; i < 5; i++) {
+        this["article" + i] = document.getElementById("article-" + i)
+        this["article" + i].textContent = data.articles[i].title
+        this["article" + i].href = data.articles[i].url;
+        
+        
+
+      }
+  
+    })
+  }
