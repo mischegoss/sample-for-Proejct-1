@@ -41,7 +41,7 @@ fetch("http://api.openweathermap.org/data/2.5/weather?q=" + currentLocation + "&
   })
 }
 
-//Get joke with JQuery
+//Get activity with JQuery
 
 $.getJSON("https://www.boredapi.com/api/activity", function(data){
   currentActivity = data.activity;
