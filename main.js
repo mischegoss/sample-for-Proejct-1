@@ -33,7 +33,7 @@ $.getJSON('https://ipapi.co/json/', function(data){
 
 function getForecast() {
 
-fetch("https://api.openweathermap.org/data/2.5/weather?q=" + currentLocation + "&appid=d91f911bcf2c0f925fb6535547a5ddc9&units=imperial")
+fetch("https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/data/2.5/weather?q=" + currentLocation + "&appid=d91f911bcf2c0f925fb6535547a5ddc9&units=imperial")
   .then(function(response) {
     return response.json();
   })
@@ -49,7 +49,7 @@ fetch("https://api.openweathermap.org/data/2.5/weather?q=" + currentLocation + "
 
 //Get activity with JQuery
 
-$.getJSON("https://www.boredapi.com/api/activity", function(data){
+$.getJSON("https://cors-anywhere.herokuapp.com/https://www.boredapi.com/api/activity", function(data){
   currentActivity = data.activity;
   activityElement.textContent = currentActivity;
   
@@ -60,7 +60,7 @@ $.getJSON("https://www.boredapi.com/api/activity", function(data){
 
 function getTopNews() {
   const newsURL = 
-  "https://newsapi.org/v2/top-headlines?country=us&apiKey=2db8e4a853ea4d34a0f9405a0ff55811"
+  "https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines?country=us&apiKey=2db8e4a853ea4d34a0f9405a0ff55811"
 
   fetch(newsURL)
     .then(function(response) {
