@@ -81,7 +81,7 @@ function getTopNews() {
   });
 
  
-$( "#modalButton" ).click(function() {
+$("#modalButton" ).click(function() {
  userInput = $("#userInput").val();
  nameElement.textContent = userInput;
 
