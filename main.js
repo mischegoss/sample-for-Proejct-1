@@ -1,13 +1,14 @@
 
 let currentLocation;
 let currentCondition;
+let currentActivity;
 
 // Test to make sure JS file is working
 
 console.log("This is working");
 
 //Grabbing DOM elements
-var domElements = ["name", "location", "forecast", "quote", "news", "picture"];
+var domElements = ["name", "location", "forecast", "activity", "news", "picture"];
 
 for (i = 0; i < domElements.length; i++) {
     this[domElements[i] + "Element"] = document.getElementById(domElements[i] + "-input")
@@ -33,9 +34,17 @@ fetch("http://api.openweathermap.org/data/2.5/weather?q=" + currentLocation + "&
   .then(function(data) {
     forecastElement.textContent = "The current temperature is " + data.main.temp + " °F";
     currentCondition = data.weather[0].description
-    currentCondition.replace(/\s+/g, ',').toLowerCase();
-    pictureElement.src = "https://source.unsplash.com/featured/?" + currentCondition;
-    pictureElement.srcset = "https://source.unsplash.com/featured/?" + currentCondition;
+    let conditionForURL = currentCondition.replace(/\s+/g, ',').toLowerCase();
+    pictureElement.src = "https://source.unsplash.com/featured/?" + conditionForURL;
+    pictureElement.alt = currentCondition;
 
   })
 }
+
+//Get joke with JQuery
+
+$.getJSON("https://www.boredapi.com/api/activity", function(data){
+  currentActivity = data.activity;
+  activityElement.textContent = currentActivity;
+  
+})
