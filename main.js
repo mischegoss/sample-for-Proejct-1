@@ -49,6 +49,8 @@ fetch("https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/data/2
 
 //Get activity with JQuery
 
+//Comment for testing
+
 $.getJSON("https://cors-anywhere.herokuapp.com/https://www.boredapi.com/api/activity", function(data){
   currentActivity = data.activity;
   activityElement.textContent = currentActivity;
