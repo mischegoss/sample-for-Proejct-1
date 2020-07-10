@@ -60,13 +60,13 @@ $.getJSON("https://cors-anywhere.herokuapp.com/https://www.boredapi.com/api/acti
 
 function getTopNews() {
   const newsURL = 
-  "https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines?country=us&apiKey=2db8e4a853ea4d34a0f9405a0ff55811"
-
+  "https://gnews.io/api/v3/top-news?token=672f4bdf76c091ef3a5381267aa41020"
   fetch(newsURL)
     .then(function(response) {
       return response.json();
     })
     .then(function(data) {
+      console.log(data)
       for (i = 0; i < 5; i++) {
         this["article" + i] = document.getElementById("article-" + i)
         this["article" + i].textContent = data.articles[i].title
