@@ -13,56 +13,12 @@
     <link rel="stylesheet" href="main.css"/>
 
     
-    <title>Hello, world!</title>
+    <title>COVID STATS</title>
   </head>
   <body>
-<!--Add comment for testing-->
-    <!--Jumbotron-->
-    <div class="jumbotron">
-        <h1 class="display-4 text-center">Hello,  <span id="name-input"> </span>! </h1>
-        <p class="lead text-center">  How's life in <span id="location-input"> your world </span> today? </span></p>
-        <hr class="my-4">
-      </div>
-
-      <!--Modal-->
-
-      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="basic-addon1">🧑</span>
-                </div>
-                <input type="text" class="form-control" id = "userInput" placeholder="Add Your Name Here, Stranger" aria-label="Username" aria-describedby="basic-addon1">
-              
-              <div class="input-group-append">
-                <button class="btn btn-outline-secondary" id= "modalButton" type="button">Add Your Name</button>
-              </div>
-            </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal"> Close</button>
-              
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-
-
-      <!--Card for Data-->
-      <!-- Add second comment for testing-->
-
-      <div class="card" style="width: 50vw;">
-        <img class="card-img-top" style="max-width: 45vw;" id = "picture-input" alt="placeholder image "src="http://placehold.it/300x200"
+   
+      <div class="loader"></div>
+        <img class="card-img-top" style="max-height: 200px; max-height:60vmax" id = "picture-input" alt="placeholder image "src="http://placehold.it/300x200"
   alt="Placeholder" 
 />
        
@@ -78,18 +34,26 @@
                   <li> Last Updated: <span id= "updated-input"></span></li>
                   
                 </ul>
+  </li>
+
+                <ul class="list-group list-group-flush">
+
+                  <li class="list-group-item" id ="news-input">
+                    <h4> COVID Report for <span id = "national-input">STATE</span></h4>
+                    <ul>
+                      <li> Total Cases: <span id= "nationalTotal-input"></span></li>
+                      <li> Increase in Cases: <span id= "nationalIncrease-input"></span></li>
+                      <li> Deaths: <span id= "nationalDeath-input"></span></li>
+                      <li> Last Updated: <span id= "nationalUpdated-input"></span></li>
+                      
+                    </ul>
 
 
 
 
             </li>
-
-
-
-
-                <li class="list-group-item" id ="forecast-input">Forecast</li>
                 
-                <li class="list-group-item">Activity Suggestion: <span id ="activity-input"> Activity</span> </li>
+               
                 <li class="list-group-item" id ="news-input">
                   <h4> Top News <span id = "date-input"></span></h4>
                     <ul>
